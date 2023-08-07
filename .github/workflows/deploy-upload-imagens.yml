@@ -80,6 +80,10 @@ jobs:
         run: npx browserslist@latest --update-db
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          FAUNA_API_KEY: ${{ secrets.FAUNA_API_KEY }}
+          NEXT_PUBLIC_IMGBB_API_KEY: ${{ secrets.NEXT_PUBLIC_IMGBB_API_KEY }}
+
       - name: Static HTML export with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
@@ -98,6 +102,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
-        env:
-          FAUNA_API_KEY: ${{ secrets.FAUNA_API_KEY }}
-          NEXT_PUBLIC_IMGBB_API_KEY: ${{ secrets.NEXT_PUBLIC_IMGBB_API_KEY }}
