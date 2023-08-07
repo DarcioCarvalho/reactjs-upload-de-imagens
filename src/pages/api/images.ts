@@ -52,6 +52,7 @@ export default async function handler(
   }
 
   if (req.method === 'GET') {
+    console.log('Fauna_Key: ', process.env.FAUNA_API_KEY);
     const { after } = req.query;
 
     const queryOptions = {
