@@ -9,7 +9,7 @@ export function Error(): JSX.Element {
       flexDir="column"
     >
       <Heading>Infelizmente ocorreu um erro =(</Heading>
-      <h1>Fauna Key: {process.env.FAUNA_API_KEY}</h1>
+      <h1>Fauna Key: {process.env.NEXT_PUBLIC_FAUNA_API_KEY}</h1>
       <Button py={6} onClick={() => window.location.reload()} mt={4}>
         Clique aqui para tentar novamente
       </Button>
