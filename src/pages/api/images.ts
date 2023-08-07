@@ -52,7 +52,6 @@ export default async function handler(
   }
 
   if (req.method === 'GET') {
-    console.log('Fauna_Key: ', process.env.FAUNA_API_KEY);
     const { after } = req.query;
 
     const queryOptions = {
@@ -83,6 +82,7 @@ export default async function handler(
         });
       })
       .catch(err => {
+        console.log('FaunaDB_Key: ', process.env.FAUNA_API_KEY);
         return res.status(400).json(err);
       });
   }
