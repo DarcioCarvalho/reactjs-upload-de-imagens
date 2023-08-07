@@ -82,7 +82,6 @@ export default async function handler(
         });
       })
       .catch(err => {
-        console.log('FaunaDB_Key: ', process.env.FAUNA_API_KEY);
         return res.status(400).json(err);
       });
   }
