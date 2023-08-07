@@ -23,7 +23,7 @@ de dados e gerenciamento de estado).
 E para finalizar, a aplicação teve um tratamento responsivo para que o usuário pudesse acessar em 
 qualquer tamanho de tela de seu dispositivo favorito.
 
-[ACESSE A APLICAÇÃO](https://darciocarvalho.github.io/reactjs-upload-de-imagens/)
+[ACESSE A APLICAÇÃO](https://reactjs-upload-de-imagens-db67my9yg-darciocarvalho.vercel.app/)
 
 ## ✨ Tecnologia
 
