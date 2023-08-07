@@ -32,7 +32,6 @@ export default function Home(): JSX.Element {
         after: pageParam,
       },
     });
-    alert(`data[FetchImages]: ${data}`);
     return data;
   }
 
