@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="IGNITE React - Chapter 04 - Desafio 02 - Upload de Imagens" src=".github/logo-upload-imagens.svg" />
+  <img alt="IGNITE React - Chapter 04 - Desafio 02 - Upload de Imagens" src=".github/logo-upload-imagens.png" />
 </p>
 
 <p align="center">
