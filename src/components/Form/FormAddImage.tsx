@@ -3,6 +3,8 @@ import { Box, Button, Stack, useToast } from '@chakra-ui/react';
 import { useForm } from 'react-hook-form';
 import { useMutation, useQueryClient } from 'react-query';
 
+import { Image } from '../../Interface/Image';
+
 import { FileInput } from '../Input/FileInput';
 import { TextInput } from '../Input/TextInput';
 import { api } from '../../services/api';
@@ -11,11 +13,7 @@ interface FormAddImageProps {
   closeModal: () => void;
 }
 
-interface ImageData {
-  url: string;
-  title: string;
-  description: string;
-}
+type ImageData = Omit<Image, 'ts' | 'id'>;
 
 export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
   const [imageUrl, setImageUrl] = useState('');
@@ -151,6 +149,8 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
           // TODO REGISTER DESCRIPTION INPUT WITH VALIDATIONS
           {...register('description', formValidations.description)}
         />
+
+        <TextInput placeholder="Endereço do site..." {...register('urlSite')} />
       </Stack>
 
       <Button

@@ -15,6 +15,7 @@ interface ImagesQueryResponse {
     data: {
       title: string;
       description: string;
+      urlSite?: string;
       url: string;
     };
     ts: number;
@@ -29,7 +30,7 @@ export default async function handler(
   res: NextApiResponse
 ): Promise<void> {
   if (req.method === 'POST') {
-    const { url, title, description } = req.body;
+    const { url, title, description, urlSite } = req.body;
 
     return client
       .query(
@@ -37,6 +38,7 @@ export default async function handler(
           data: {
             title,
             description,
+            ...(urlSite.trim() !== '' && { urlSite }),
             url,
           },
         })

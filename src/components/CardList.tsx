@@ -1,18 +1,13 @@
 import { useState } from 'react';
 import { SimpleGrid, useDisclosure } from '@chakra-ui/react';
+
+import { Image as ImageCard } from '../Interface/Image';
+
 import { Card } from './Card';
 import { ModalViewImage } from './Modal/ViewImage';
 
-interface Card {
-  title: string;
-  description: string;
-  url: string;
-  ts: number;
-  id: string;
-}
-
 interface CardsProps {
-  cards: Card[];
+  cards: ImageCard[];
 }
 
 export function CardList({ cards }: CardsProps): JSX.Element {

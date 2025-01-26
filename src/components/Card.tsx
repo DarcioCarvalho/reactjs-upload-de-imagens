@@ -6,17 +6,14 @@ import {
   Image,
   Skeleton,
   SkeletonText,
+  LinkBox,
+  LinkOverlay,
 } from '@chakra-ui/react';
 
-interface Card {
-  title: string;
-  description: string;
-  url: string;
-  ts: number;
-}
+import { Image as ImageCard } from '../Interface/Image';
 
 interface CardProps {
-  data: Card;
+  data: ImageCard;
   viewImage: (url: string) => void;
 }
 
@@ -43,14 +40,17 @@ export function Card({ data, viewImage }: CardProps): JSX.Element {
           <>
             <SkeletonText fontSize="2xl" mt={2} noOfLines={1} />
             <SkeletonText fontSize="md" mt={7} noOfLines={1} />
+            <SkeletonText fontSize="md" mt={7} noOfLines={1} />
           </>
         ) : (
-          <>
-            <Heading fontSize="2xl">{data.title}</Heading>
+          <LinkBox _hover={data.urlSite ? { color: 'orange.200' } : undefined}>
+            <LinkOverlay href={data.urlSite} isExternal>
+              <Heading fontSize="2xl">{data.title}</Heading>
+            </LinkOverlay>
             <Text mt={2.5} fontSize="md">
               {data.description}
             </Text>
-          </>
+          </LinkBox>
         )}
       </Box>
     </Box>
