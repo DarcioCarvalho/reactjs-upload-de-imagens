@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { useState } from 'react';
 import { SimpleGrid, useDisclosure } from '@chakra-ui/react';
 
